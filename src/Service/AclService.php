@@ -46,8 +46,6 @@ class AclService implements EventManagerAwareInterface
                 $acl->allow($role, $resource, array_values($privileges));
             }
         }
-        
-        $breakpoint = 1;
     }
     
     public function isAllowed($role, $resource, $privilege)
@@ -61,6 +59,5 @@ class AclService implements EventManagerAwareInterface
              */
             return FALSE;
         }
-//         return (!($this->getAcl()->hasResource($resource) && $this->getAcl()->hasRole($role))) || $this->getAcl()->isAllowed($role, $resource);
     }
 }

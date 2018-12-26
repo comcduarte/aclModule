@@ -35,7 +35,12 @@ class AclListener implements ListenerAggregateInterface
         
         $routeMatch = $e->getRouteMatch();
         if (!$this->getAclService()->isAllowed($role, $routeMatch->getMatchedRouteName(), $routeMatch->getParam('action'))) {
-            $e->getRouteMatch()->setParam('controller', 'index')->setParam('action', 'denied');
+            $e->getRouteMatch()
+                ->setParam('controller', 'index')
+                ->setParam('role', $role)
+                ->setParam('routeMatch', $routeMatch->getMatchedRouteName())
+                ->setParam('routeAction', $routeMatch->getParam('action'))
+                ->setParam('action', 'denied');
         }
         return $this;
     }
