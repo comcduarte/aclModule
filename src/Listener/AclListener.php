@@ -24,9 +24,9 @@ class AclListener implements ListenerAggregateInterface
         $role = AclService::USER_GUEST;
         
         if ($this->getAuthService()->hasIdentity()) {
-            $authService = $this->getAuthService();
-            $identity = $authService->getIdentity();
-            $role = $identity->getRole();
+//             $authService = $this->getAuthService();
+//             $identity = $authService->getIdentity();
+//             $role = $identity->getRole();
             /**
              * @ TODO: Until user can be assigned roles, and roles go through crud development, assume only two roles, guest and member.
              */
