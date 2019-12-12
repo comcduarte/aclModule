@@ -10,6 +10,7 @@ Simple implementation of Zend Framework Permissions ACL Component.  Originally c
 ### Installation
 
 - Add zendframework/zend-permissions-acl to composer.json dependencies.
+- Add zendframework/zend-authentication to composer.json dependencies.
 - Add 'Acl' to your modules.config.php
 
 ### Configuration
